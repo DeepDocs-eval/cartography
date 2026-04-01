@@ -10,7 +10,7 @@ Representation of a [Kubernetes Cluster.](https://kubernetes.io/docs/concepts/ov
 | **id** | Identifier for the cluster i.e. UID of `kube-system` namespace |
 | **name** | Name assigned to the cluster which is derived from kubeconfig context |
 | creation\_timestamp | Timestamp of when the cluster was created i.e. creation of `kube-system` namespace |
-| **external\_id** | Identifier for the cluster fetched from the kubeconfig context. For EKS clusters this should be the `arn`.|
+| **external_id** | Identifier for the cluster fetched from the kubeconfig context (typically the EKS cluster name). |
 | version | Git version of the Kubernetes cluster (e.g. v1.27.3) |
 | version\_major | Major version number of the Kubernetes cluster (e.g. 1) |
 | version\_minor | Minor version number of the Kubernetes cluster (e.g. 27) |

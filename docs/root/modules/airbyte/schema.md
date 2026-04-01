@@ -122,7 +122,7 @@ Provides details of a single user in an organization.
     ```
 - `User` is member of an `Workspace`
     ```
-    (:AirbyteUser)-[:ADMIN_OF]->(:AirbyteWorkspace)
+    (:AirbyteUser)-[:MEMBER_OF]->(:AirbyteWorkspace)
     ```
 
 

@@ -71,7 +71,7 @@ Canonical nodes are created by a **dedicated intel module** (`cartography.intel.
 ```bash
 # Configure sources of truth for ontology nodes
 cartography --ontology-users-source "okta,entra,gsuite"
-cartography --ontology-devices-source "crowdstrike,kandji,duo"
+cartography --ontology-users-source "okta,entra,googleworkspace"
 ```
 
 ## Available Semantic Labels and Fields
@@ -272,7 +272,7 @@ class UserNodeProperties(CartographyNodeProperties):
     firstname: PropertyRef = PropertyRef("firstname")
     lastname: PropertyRef = PropertyRef("lastname")
     inactive: PropertyRef = PropertyRef("inactive")
-
+    active: PropertyRef = PropertyRef("active")
 
 @dataclass(frozen=True)
 class UserToUserAccountRelProperties(CartographyRelProperties):

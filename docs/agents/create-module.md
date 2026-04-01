@@ -74,7 +74,7 @@ def start_your_module_ingestion(neo4j_session: neo4j.Session, config: Config) ->
 
 ## The Sync Pattern: Get, Transform, Load, Cleanup
 
-Every sync function follows this exact pattern:
+Every sync function follows a similar pattern:
 
 ```python
 @timeit
@@ -758,22 +758,22 @@ Represents a user in Your Service.
 ## File Structure Template
 
 ```
-cartography/intel/your_service/
+cartography/intel/your_module/
 ├── __init__.py          # Main entry point
-└── entities.py          # Domain sync modules
+└── users.py             # Domain sync modules (users, groups, etc.)
 
-cartography/models/your_service/
-├── entity.py            # Data model definitions
+cartography/models/your_module/
+├── user.py              # Data model definitions
 └── tenant.py            # Tenant model
 
-tests/data/your_service/
-└── entities.py          # Mock test data
+tests/data/your_module/
+└── users.py             # Mock test data
 
-tests/unit/cartography/intel/your_service/
-└── test_entities.py     # Unit tests
+tests/unit/cartography/intel/your_module/
+└── test_users.py        # Unit tests
 
-tests/integration/cartography/intel/your_service/
-└── test_entities.py     # Integration tests
+tests/integration/cartography/intel/your_module/
+└── test_users.py        # Integration tests
 ```
 
 ## Common Pitfalls

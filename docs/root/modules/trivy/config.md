@@ -2,10 +2,10 @@
 
 [Trivy](https://aquasecurity.github.io/trivy/latest/) is a vulnerability scanner that can be used to scan images for vulnerabilities.
 
-Currently, Cartography allows you to use Trivy to scan the following resources:
-
-- [ECRImage](https://cartography-cncf.github.io/cartography/modules/aws/schema.html#ecrimage) (note that you scan ECRRepositoryImages but findings attach to their underlying ECRImage nodes)
-
+Currently, Cartography ingests Trivy vulnerability scans for the following container images:
+- ECR Images (scans target ECRRepositoryImage but findings attach to underlying ECRImage nodes)
+- GCP Artifact Registry images
+- GitLab Container Repository images
 
 To use Trivy with Cartography,
 
@@ -63,10 +63,7 @@ To use Trivy with Cartography,
 
 ## Notes on running Trivy
 
-- You can use [custom OPA policies](https://trivy.dev/latest/docs/configuration/filtering/#by-rego) with Trivy to filter the results. To do this, specify the path to your policy file using `--trivy-opa-policy-file-path`
-    ```bash
-    cartography --trivy-path /usr/local/bin/trivy --trivy-opa-policy-file-path /path/to/policy.rego
-    ```
+- You can use custom OPA policies with Trivy to filter results when generating scan JSON files separately (see [Trivy docs](https://trivy.dev/latest/docs/configuration/filtering/#by-rego)).
 
 - Consider also running Trivy with `--timeout 15m` for larger images e.g. Java ones.
 
