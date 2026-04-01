@@ -85,8 +85,9 @@ Represents an individual `user` within an organization.
 
 #### Relationships
 - `User` belongs to an `Organization`
+- `User` belongs to an `Organization`
     ```
-    (OpenAIOrganization)-[:RESOURCE]->(OpenAIAdminApiKey)
+    (OpenAIOrganization)-[:RESOURCE]->(OpenAIUser)
     ```
 - `Admin API Key` is owned by a `User`
     ```

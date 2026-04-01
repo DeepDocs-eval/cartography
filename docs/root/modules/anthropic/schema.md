@@ -53,7 +53,7 @@ Represents an individual `user` within an organization.
 #### Relationships
 - `User` belongs to an `Organization`
     ```
-    (AnthropicOrganization)-[:RESOURCE]->(AnthropicApiKey)
+    (AnthropicOrganization)-[:RESOURCE]->(AnthropicUser)
     ```
 - `API Key` is owned by a `User`
     ```
@@ -86,7 +86,7 @@ Represents an individual workspace.
 #### Relationships
 - `Workspace` belongs to an `Organization`
     ```
-    (:AnthropicOrganization)-[:RESOURCE]->(:AnthropicWorkpace)
+    (:AnthropicOrganization)-[:RESOURCE]->(:AnthropicWorkspace)
     ```
 - `Workspace` contains `ApiKey`
     ```
@@ -119,7 +119,7 @@ Represents an individual API key in a project.
 | last_used_at | The RFC 3339 datetime of when the API key was last used. |
 
 #### Relationships
-- `Apikey` belongs to an `Organization`
+- `APIKey` belongs to an `Organization`
     ```
     (:AnthropicOrganization)-[:RESOURCE]->(:AnthropicApiKey)
     ```

@@ -354,7 +354,7 @@ This would give a user access to the privileges associated with any Lambda servi
 **Cartography Query:**
 ```cypher
 MATCH p=(stmt:AWSPolicyStatement)--(pol:AWSPolicy)--(principal:AWSPrincipal)--(a:AWSAccount)
-WHERE stmt.effect = "Allow" AND (any(x in stmt.action WHERE x = "iam:PassRole") AND any(x in stmt.action WHERE x = "lambda:AddPermission") AND any(x in stmt.action WHERE x = "lambda:InvokeFunction"))
+WHERE stmt.effect = "Allow" AND (any(x in stmt.action WHERE x = "iam:PassRole") AND any(x in stmt.action WHERE x = "lambda:CreateFunction") AND any(x in stmt.action WHERE x = "lambda:AddPermission"))
 RETURN p
 ```
 

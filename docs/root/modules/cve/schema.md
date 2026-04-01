@@ -11,8 +11,8 @@ Representation of a [CVE](https://github.com/CVEProject/automation-working-group
 | **id** | The CVE ID |
 | **cve\_id** | The CVE ID. Indexed for consistency with other nodes that use CVE as an extra label. |
 | assigner | The assigner of the CVE (email address) |
-| description\_en | The english description of the issue. |
-| references | This is reference data in the form of URLs |
+| descriptions_en | English descriptions of the issue. |
+| references_urls | List of reference URLs |
 | problem\_types | A list of CWE identifiers |
 | vector\_string | The CVSSv3 scoring data. |
 | attack\_vector | The attack vector |

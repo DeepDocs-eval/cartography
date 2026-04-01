@@ -330,10 +330,10 @@ Facts:
 ```
 
 #### See details of a specific fact
+#### See details of a rule's facts
 ```bash
-cartography-rules list mfa-missing missing-mfa-cloudflare
+cartography-rules list mfa-missing
 ```
-
 ### `run`
 
 #### Run all rules in text mode
@@ -505,12 +505,13 @@ class MyRuleOutput(Finding):
 
 ```python
 class ObjectStoragePublic(Finding):
+class ObjectStoragePublic(Finding):
     name: str | None = None
     id: str | None = None
     region: str | None = None
     public_access: bool | None = None
     account: str | None = None  # For Azure storage accounts
-
+    account_id: str | None = None
 object_storage_public = Rule(
     id="object_storage_public",
     name="Public Object Storage Attack Surface",

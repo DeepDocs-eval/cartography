@@ -156,7 +156,7 @@ Representation of an Entra [Group](https://learn.microsoft.com/en-us/graph/api/g
 - Entra groups can have owners
 
     ```cypher
-    (:EntraGroup)-[:OWNER_OF]->(:EntraUser)
+    (:EntraGroup)<-[:OWNER_OF]-(:EntraUser)
     ```
 
 ### EntraApplication
